@@ -113,7 +113,7 @@ class NumberGuessingGame:
         self.root.title("Угадай число")
         self.root.geometry("800x700")
         self.root.state('zoomed')  # Полный экран (Windows/Linux)
-        self.root.configure(bg="#1e1e1e")
+        self.root.configure(bg="#121212")
 
         self.secret_num = ""
         self.attempts = 0
@@ -168,7 +168,7 @@ class NumberGuessingGame:
         history_title.pack(pady=(20, 5))
 
         # Canvas + Frame для скролла
-        canvas = tk.Canvas(self.root, bg="#2a2a2a", height=200, highlightthickness=0)
+        canvas = tk.Canvas(self.root, bg="#1f1f1f", height=200, highlightthickness=0)
         scrollbar = tk.Scrollbar(self.root, orient="vertical", command=canvas.yview)
         self.history_frame = tk.Frame(canvas, bg="#2a2a2a")
 
@@ -187,16 +187,16 @@ class NumberGuessingGame:
         self.info_frame = tk.Frame(self.root, bg="#254", bd=2, relief="solid")
         info_text = (
             " 🎯 Угадайте 4-значное число от 1000 до 9999\n\n"
-            " ● 🟢 Зелёный — цифра на своём месте\n"
-            " ● 🟡 Жёлтый — цифра есть, но не на своём месте\n"
-            " ● 🔴 Красный — цифры нет в числе\n"
+            " 🟢 Зелёный — цифра на своём месте\n"
+            " 🟡 Жёлтый — цифра есть, но не на своём месте\n"
+            " 🔴 Красный — цифры нет в числе\n"
         )
         self.info_label = tk.Label(
             self.info_frame,
             text=info_text,
             font=("Arial", 11),
-            fg="lightgreen",
-            bg="#2c3e50",
+            fg="#b8f6d6",
+            bg="#1f1f1f",
             justify="left",
             anchor="w",
             padx=15,
@@ -254,7 +254,7 @@ class NumberGuessingGame:
     def display_result_in_history(self, guess, colors):
         colors_map = {
             'green': '#4CAF50',
-            'yellow': '#FFC107',
+            'yellow': '#FFD700',
             'red': '#F44336'
         }
 
