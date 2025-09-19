@@ -218,7 +218,7 @@ class NumberGuessingGame:
         self.history_canvas.pack(side="top", fill="both", expand=True, padx=40, pady=5)
         self.history_scrollbar.pack(side="right", fill="y")
 
-    # --- Панель информации (встроенная) ---
+    # Панель информации
         self.info_frame = tk.Frame(self.root, bg="#254", bd=2, relief="solid")
         info_text = (
             " 🎯 Угадайте 4-значное число от 1000 до 9999\n\n"
@@ -354,7 +354,7 @@ class NumberGuessingGame:
         try:
             mp3_path = os.path.join(os.path.dirname(__file__), 'victory.mp3')
             if _HAS_PLAYSOUND and os.path.exists(mp3_path):
-                # play in background thread 
+                # Проигрываем музыку
                 threading.Thread(target=lambda: playsound(mp3_path), daemon=True).start()
                 return
         except Exception:
