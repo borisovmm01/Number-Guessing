@@ -4,4 +4,4 @@ pillow
 pyinstaller
 setuptools
 wheel
-playsound==1.3.0
+playsound==1.3.0; sys_platform == "win32"
